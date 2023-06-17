@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Vaga!"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_margin="20dp"
+        android:background="@color/purple_500"
+        android:layout_below="@id/txt_title"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/txt_name"
+        android:layout_width="411dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="CNPJ anunciante:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#C6C6C6" />
+
+    <EditText
+        android:id="@+id/txt_date"
+        android:layout_width="410dp"
+        android:layout_height="38dp"
+        android:layout_below="@id/txt_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Cod vaga:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#C6C6C6" />
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="410dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/txt_date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Nome da vaga:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#C6C6C6" />
+
+    <EditText
+        android:id="@+id/txt_endereco"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/txt_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Descrição da vaga:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#C6C6C6" />
+
+    <EditText
+        android:id="@+id/txt_telefone"
+        android:layout_width="410dp"
+        android:layout_height="43dp"
+        android:layout_below="@id/txt_endereco"
+
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Data de vencimento:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#C6C6C6" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="97dp"
+        android:layout_height="43dp"
+        android:text="Incluir"
+        android:textAlignment="center"
+        android:layout_below="@id/txt_telefone"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="102dp"
+        android:layout_height="43dp"
+        android:text="Alterar"
+        android:textAlignment="center"
+        android:layout_below="@id/txt_telefone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+    <Button
+        android:id="@+id/butto3"
+        android:layout_width="98dp"
+        android:layout_height="43dp"
+        android:text="Excluir"
+        android:textAlignment="center"
+        android:layout_below="@id/txt_telefone"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+</RelativeLayout>
