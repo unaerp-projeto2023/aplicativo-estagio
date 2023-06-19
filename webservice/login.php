@@ -2,7 +2,7 @@
 /**
  * API que valida um LOGIN
  * -------------------------------------------------------------------------------------------
- * @author Guilherme Galvão
+ * @author Guilherme Galvao
  * @version 1.0
  * @copyright 2023
  */
@@ -45,7 +45,8 @@ $senha = str_replace("\\"   , "", $senha);
 $response = array();
 
 // verifica o login
-$lsql = $dba->query("SELECT * FROM {$TB_USUARIO} WHERE (email = '{$login}' AND (password = '{$esenha}')");
+$sql  = "SELECT * FROM {$TB_USUARIO} WHERE (email = '{$login}') AND (password = '{$senha}')";
+$lsql = $dba->query($sql);
 $num  = $dba->num_rows($lsql);
 $num  = (int)$num;
 

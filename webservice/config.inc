@@ -2,7 +2,7 @@
 /**
  * Programa de Configuracao
  * -------------------------------------------------------------------------------------------
- * @author Guilherme Galvão
+ * @author Guilherme Galvao
  * @version 1.0
  * @copyright 2023
  */

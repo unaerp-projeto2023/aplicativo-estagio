@@ -2,7 +2,7 @@
 /**
  * Programa de Configuracao
  * -------------------------------------------------------------------------------------------
- * @author Guilherme Galvão
+ * @author Guilherme Galvao
  * @version 1.0
  * @copyright 2023
  */
@@ -20,4 +20,5 @@ $config = array("host"     =>  "localhost"         ,
 //-----------------------------------------------
 $TB_USUARIO = "tb_users";
 $TB_ANUNCIO = "tb_announcement";
+$TB_RELACAO = "tb_relation";
 

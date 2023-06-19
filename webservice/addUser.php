@@ -1,8 +1,11 @@
 <?php
 /**
- * API de Upload de arquivos
+ * API de Cadastro de Usuario
  * -------------------------------------------------------------------
- * @author Guilherme Galvão
+ * type: (A)nunciante
+ *       (U)suario   (Estagario)
+ * -------------------------------------------------------------------
+ * @author Guilherme Galvao
  * @version 1.0
  * @copyright 2023
  */
@@ -27,14 +30,20 @@ $campos = array("name"     => $name    ,
 // inclui os dados da solicitação
 $id = $cadastro->incluir($TB_USUARIO, $campos);
 
-// response
-$response = array("codeError" => 0,
-                  "message"   => "Usuário cadastrado com sucesso!!!",
-                  "result"    => array("id"       => $id      ,
-                                       "name"     => $name    ,
-                                       "password" => $password,
-                                       "email"    => $email   ,
-                                       "type"     => $type    ));
+
+if ($id <= 0) {
+   $response = array("codeError" => 99, "message" => "Erro ao realizar o cadastro!", "result" => null);
+}
+else {
+   $response = array("codeError" => 0,
+                     "message"   => "Usuário cadastrado com sucesso!!!",
+                     "result"    => array("id"       => $id      ,
+                                          "name"     => $name    ,
+                                          "password" => $password,
+                                          "email"    => $email   ,
+                                          "type"     => $type    ));
+}
+
 
 // finaliza o script
 $dba->close();
