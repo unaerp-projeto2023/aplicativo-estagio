@@ -25,14 +25,16 @@ $login = str_replace("\\"   , "", $login);
 $login = strtolower($login);
 
 // tira dados mal intencionados da Senha
-$senha = htmlentities($senha);
-$senha = trim(strip_tags(str_replace("'", "", $senha)));
-$senha = str_replace("--"   , "", $senha);
-$senha = str_replace("UNION", "", $senha);
-$senha = str_replace("#"    , "", $senha);
-$senha = str_replace("/"    , "", $senha);
-$senha = str_replace("md5"  , "", $senha);
-$senha = str_replace("\\"   , "", $senha);
+$senha  = htmlentities($senha);
+$senha  = trim(strip_tags(str_replace("'", "", $senha)));
+$senha  = str_replace("--"   , "", $senha);
+$senha  = str_replace("UNION", "", $senha);
+$senha  = str_replace("#"    , "", $senha);
+$senha  = str_replace("/"    , "", $senha);
+$senha  = str_replace("md5"  , "", $senha);
+$senha  = str_replace("\\"   , "", $senha);
+$esenha = SEGURANCA::encrypt($senha);
+$esenha = str_replace("%","-", $esenha);
 
 //************************************************
 // seta os tipos de erro (status)
@@ -45,7 +47,7 @@ $senha = str_replace("\\"   , "", $senha);
 $response = array();
 
 // verifica o login
-$sql  = "SELECT * FROM {$TB_USUARIO} WHERE (email = '{$login}') AND (password = '{$senha}')";
+$sql  = "SELECT * FROM {$TB_USUARIO} WHERE (email = '{$login}') AND (password = '{$esenha}')";
 $lsql = $dba->query($sql);
 $num  = $dba->num_rows($lsql);
 $num  = (int)$num;

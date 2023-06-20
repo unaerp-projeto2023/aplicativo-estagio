@@ -18,9 +18,9 @@
  * geral() ......: retorna qualquer coisa que esteja no banco (abreviacao de query)
  * sql() ........: retorna uma query qualquer
  * ---------------------------------------------------------------------------------
- * @author Claudio Monteoliva
+ * @author Guilherme Galvao
  * @version 1.0
- * @copyright 2021 Monteoliva Developer
+ * @copyright 2023
  */
 class Connect_Database {
   // seta propriedades
