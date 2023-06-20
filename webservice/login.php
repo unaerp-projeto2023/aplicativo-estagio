@@ -55,7 +55,7 @@ $num  = (int)$num;
 // verifica o retorno
 if ($num === 0) {
    $response = array("codeError" => 99,
-                     "message"   => "Usuário/Senha inválido!",
+                     "message"   => "Usuário/Senha inválido! Ou usuário não encontrado!",
                      "result"    => null);
 }
 else {

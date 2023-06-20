@@ -19,18 +19,20 @@ $locality         = (isset($_REQUEST["locality"        ])) ? $_REQUEST["locality
 $description      = (isset($_REQUEST["description"     ])) ? $_REQUEST["description"     ] : "";
 
 
-if ($companyId > 0)            { $_condi .= " AND (a.id_user = {$companyId})" }
-if ($userId    > 0)            { $_condi .= " AND (b.id_user = {$userId})"    }
-if (!empty($area_description)) { $_condi .= " AND (a.area_description LIKE '%{$area_description}%')" }
-if (!empty($locality        )) { $_condi .= " AND (a.locality         LIKE '%{$locality}%')"         }
-if (!empty($description     )) { $_condi .= " AND (a.description      LIKE '%{$description}%')"      }
+if ($companyId > 0)            { $_condi .= " AND (a.id_user = {$companyId})"; }
+if ($userId    > 0)            { $_condi .= " AND (b.id_user = {$userId})";    }
+if (!empty($area_description)) { $_condi .= " AND (a.area_description LIKE '%{$area_description}%')"; }
+if (!empty($locality        )) { $_condi .= " AND (a.locality         LIKE '%{$locality}%')";         }
+if (!empty($description     )) { $_condi .= " AND (a.description      LIKE '%{$description}%')";      }
 
 
 // Retorna a lista
 $query = "SELECT a.*,
-                 count(b.id) AS total
+                 count(b.id) AS total,
+                 c.name as company
           FROM {$TB_ANUNCIO} a
           LEFT JOIN {$TB_RELACAO} b ON b.id_announcement = a.id
+          LEFT JOIN {$TB_USUARIO} c ON c.id              = a.id_user
           WHERE (a.final_date > NOW())
           {$_condi}
           ORDER BY a.start_date DESC";
@@ -50,34 +52,28 @@ else {
 
    // percorre o resultado
    while($row = $dba->fetch_object($lsql)) {
-     $dt_conclusao = Util::validar($row->dt_conclusao);
-     $dt_ultimo    = Util::validar($row->dt_ultimo_andamento);
-          
+     $start_date = Util::validar($row->start_date);
+     $final_date = Util::validar($row->final_date);
+
      // monta o JSON de retorno
-     $data[] = array("id"                => $row->id         ,
-                     "assunto"           => $row->nm_tipo    ,
-                     "dtAbertura"        => $row->dt_abertura,
-                     "dtUltimoAndamento" => $dt_ultimo       ,
-                     "dtConclusao"       => $dt_conclusao);
+     $data[] = array("id"               => $row->id              ,
+                     "id_user"          => $row->id_user         ,
+                     "description"      => $row->description     ,
+                     "contact_name"     => $row->contact_name    ,
+                     "contact_email"    => $row->contact_email   ,
+                     "contact_phone"    => $row->contact_phone   ,
+                     "company"          => $row->company         ,
+                     "company_show"     => $row->company_show    ,
+                     "area_description" => $row->area_description,
+                     "locality"         => $row->locality        ,
+                     "start_date"       => $start_date           ,
+                     "final_date"       => $final_date           ,
+                     "remuneration"     => $row->remuneration    ,
+                     "total"            => $row->total           );
 	}
 
     // finaliza
 	$response["result"] = array("items" => $data);
-
-
-
-
-
-
-
-
-$response = array("codeError" => 0,
-                  "message"   => "Login de acesso realizado com sucesso!",
-                  "result"    => array("id"       => $row->id      ,
-                                       "name"     => $row->name    ,
-                                       "password" => $row->password,
-                                       "email"    => $row->email   ,
-                                       "type"     => $row->type    ));
 }
 
 // limpa

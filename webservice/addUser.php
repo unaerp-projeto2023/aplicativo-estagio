@@ -29,7 +29,7 @@ $num  = $dba->num_rows($lsql);
 $num  = (int)$num;
 
 // verifica o retorno
-if ($num === 0) {
+if ($num > 0) {
    $response = array("codeError" => 99,
                      "message"   => "E-mail já existente!",
                      "result"    => null);

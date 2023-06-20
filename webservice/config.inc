@@ -11,6 +11,7 @@ require_once("local.inc"                  );
 require_once("./class/class.seguranca.php");
 require_once("./class/class.mysqli.php"   );
 require_once("./class/class.cadastro.php" );
+require_once("./class/class.util.php"     );
 
 
 // pega o metodo do HTTP
