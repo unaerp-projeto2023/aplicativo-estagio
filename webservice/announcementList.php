@@ -12,19 +12,25 @@ require_once("config.inc");
 
 // pega os campos
 $_condi           = "";
+$total            =  0;
 $companyId        = (isset($_REQUEST["companyId"       ])) ? $_REQUEST["companyId"       ] :  0;
 $userId           = (isset($_REQUEST["userId"          ])) ? $_REQUEST["userId"          ] :  0;
 $area_description = (isset($_REQUEST["area_description"])) ? $_REQUEST["area_description"] : "";
 $locality         = (isset($_REQUEST["locality"        ])) ? $_REQUEST["locality"        ] : "";
 $description      = (isset($_REQUEST["description"     ])) ? $_REQUEST["description"     ] : "";
 
-
-if ($companyId > 0)            { $_condi .= " AND (a.id_user = {$companyId})"; }
-if ($userId    > 0)            { $_condi .= " AND (b.id_user = {$userId})";    }
+if ($companyId === 0 && $userId === 0) { $_condi = "WHERE (a.final_date > NOW())"; }
+if ($companyId > 0) {
+    if (empty($_condi)) { $_condi .= "WHERE (a.id_user = {$companyId})"; }
+    else                { $_condi .= "  AND (a.id_user = {$companyId})"; }
+}
+if ($userId > 0) {
+    if (empty($_condi)) { $_condi .= "WHERE (b.id_user = {$userId})"; }
+    else                { $_condi .= "  AND (b.id_user = {$userId})"; }
+}
 if (!empty($area_description)) { $_condi .= " AND (a.area_description LIKE '%{$area_description}%')"; }
 if (!empty($locality        )) { $_condi .= " AND (a.locality         LIKE '%{$locality}%')";         }
 if (!empty($description     )) { $_condi .= " AND (a.description      LIKE '%{$description}%')";      }
-
 
 // Retorna a lista
 $query = "SELECT a.*,
@@ -32,9 +38,9 @@ $query = "SELECT a.*,
                  c.name as company
           FROM {$TB_ANUNCIO} a
           LEFT JOIN {$TB_RELACAO} b ON b.id_announcement = a.id
-          LEFT JOIN {$TB_USUARIO} c ON c.id              = a.id_user
-          WHERE (a.final_date > NOW())
+          LEFT JOIN {$TB_USUARIO} c ON c.id = a.id_user
           {$_condi}
+          GROUP BY b.id_announcement
           ORDER BY a.start_date DESC";
 $lsql = $dba->query($query);
 $num  = $dba->num_rows($lsql);
@@ -43,7 +49,7 @@ $num  = (int)$num;
 // verifica o retorno
 if ($num === 0) {
    $response = array("codeError" => 99,
-                     "message"   => "Nenhuma anúncio de vaga disponível!",
+                     "message"   => "Nenhum anúncio de vaga disponível!",
                      "result"    => null);
 }
 else {
@@ -69,7 +75,7 @@ else {
                      "start_date"       => $start_date           ,
                      "final_date"       => $final_date           ,
                      "remuneration"     => $row->remuneration    ,
-                     "total"            => $row->total           );
+                     "total"            => $total                );
 	}
 
     // finaliza
@@ -83,6 +89,4 @@ $dba->close();
 // retorna
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
 exit();
-
-
 

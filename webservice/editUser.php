@@ -11,9 +11,9 @@
 require_once("config.inc");
 
 // pega os dados
-$id    = (isset($_REQUEST["id"   ])) ? $_REQUEST["id"      ] :  0;
-$name  = (isset($_REQUEST["name" ])) ? $_REQUEST["name"    ] : "";
-$email = (isset($_REQUEST["email"])) ? $_REQUEST["email"   ] : "";
+$id    = (isset($_REQUEST["id"   ])) ? $_REQUEST["id"   ] :  0;
+$name  = (isset($_REQUEST["name" ])) ? $_REQUEST["name" ] : "";
+$email = (isset($_REQUEST["email"])) ? $_REQUEST["email"] : "";
 
 // pega o Cadastro
 $cadastro = new Cadastro();

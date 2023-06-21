@@ -21,9 +21,18 @@ $type     = (isset($_REQUEST["type"    ])) ? $_REQUEST["type"    ] : "U";
 $esenha   = SEGURANCA::encrypt($password);
 $esenha   = str_replace("%","-", $esenha);
 
+// tira dados mal intencionados da login
+$login = htmlentities($email);
+$login = trim(strip_tags(str_replace("'", "", $login)));
+$login = str_replace("--"   , "", $login);
+$login = str_replace("UNION", "", $login);
+$login = str_replace("#"    , "", $login);
+$login = str_replace("md5"  , "", $login);
+$login = str_replace("\\"   , "", $login);
+$login = strtolower($login);
 
 // verifica o login
-$sql  = "SELECT * FROM {$TB_USUARIO} WHERE (email = '{$login}'))";
+$sql  = "SELECT id FROM {$TB_USUARIO} WHERE (email = '{$login}')";
 $lsql = $dba->query($sql);
 $num  = $dba->num_rows($lsql);
 $num  = (int)$num;
@@ -31,14 +40,14 @@ $num  = (int)$num;
 // verifica o retorno
 if ($num > 0) {
    $response = array("codeError" => 99,
-                     "message"   => "E-mail já existente!",
+                     "message"   => "E-mail já existente! Escolha outro!",
                      "result"    => null);
 }
 else {
 // pega o Cadastro
 $cadastro = new Cadastro();
 $campos = array("name"     => $name  ,
-                "email"    => $email ,
+                "email"    => $login ,
                 "password" => $esenha,
                 "type"     => $type  );
 

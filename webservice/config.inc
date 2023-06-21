@@ -17,7 +17,6 @@ require_once("./class/class.util.php"     );
 // pega o metodo do HTTP
 $httpMethod = (isset($_SERVER["REQUEST_METHOD"])) ? $_SERVER["REQUEST_METHOD"] : "";
 
-
 // seta classe de banco de dados
 $dba = new Connect_Database();
 $dba->setHost($config["host"]);
@@ -27,3 +26,4 @@ $dba->setDatabase($config["database"]);
 
 // realiza a conexao com o MySQL
 $dba->__connect();
+

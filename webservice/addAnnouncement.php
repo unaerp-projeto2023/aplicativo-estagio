@@ -55,3 +55,5 @@ $dba->close();
 echo json_encode($response, JSON_UNESCAPED_UNICODE);
 exit();
 
+exit();
+
