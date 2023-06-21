@@ -37,6 +37,8 @@ $lsql = $dba->query($sql);
 $num  = $dba->num_rows($lsql);
 $num  = (int)$num;
 
+$dba->free($lsql);
+
 // verifica o retorno
 if ($num > 0) {
    $response = array("codeError" => 99,
@@ -44,28 +46,26 @@ if ($num > 0) {
                      "result"    => null);
 }
 else {
-// pega o Cadastro
-$cadastro = new Cadastro();
-$campos = array("name"     => $name  ,
-                "email"    => $login ,
-                "password" => $esenha,
-                "type"     => $type  );
+    // pega o Cadastro
+    $cadastro = new Cadastro();
+    $campos = array("name"     => $name  ,
+                    "email"    => $login ,
+                    "password" => $esenha,
+                    "type"     => $type  );
 
-// inclui os dados da solicitação
-$id = $cadastro->incluir($TB_USUARIO, $campos);
+    // inclui os dados da solicitação
+    $id = $cadastro->incluir($TB_USUARIO, $campos);
 
 
-if ($id <= 0) {
-   $response = array("codeError" => 99, "message" => "Erro ao realizar o cadastro!", "result" => null);
-}
-else {
-   $response = array("codeError" => 0,
-                     "message"   => "Usuário cadastrado com sucesso!!!",
-                     "result"    => array("id"    => $id   ,
-                                          "name"  => $name ,
-                                          "email" => $email,
-                                          "type"  => $type ));
-}
+    if ($id <= 0) { $response = array("codeError" => 99, "message" => "Erro ao realizar o cadastro!", "result" => null); }
+    else {
+        $response = array("codeError" => 0,
+                          "message"   => "Usuário cadastrado com sucesso!!!",
+                          "result"    => array("id"    => $id   ,
+                                               "name"  => $name ,
+                                               "email" => $email,
+                                               "type"  => $type ));
+    }
 }
 
 
