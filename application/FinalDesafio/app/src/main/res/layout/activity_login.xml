@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.features.LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:ignore="UselessParent">
+        <include
+            layout="@layout/app_bar_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="@dimen/dimens_100"
+            android:layout_height="@dimen/dimens_100"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_10"
+            tools:ignore="ContentDescription"
+            app:srcCompat="@drawable/ic_user_account"
+            app:tint="?attr/colorPrimaryVariant" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?attr/colorPrimaryVariant"
+            android:layout_margin="@dimen/dimens_20"
+            tools:ignore="MissingConstraints" />
+        <include layout="@layout/login_fields" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="@dimen/dimens_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/bt_enter"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_account_user"
+                android:layout_width="@dimen/dimens_150"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/bt_account_user"
+                android:textSize="14sp"
+                style="@style/Widget.MaterialComponents.Button.TextButton" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bt_account_comp"
+                android:layout_width="@dimen/dimens_150"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/bt_account_comp"
+                android:textSize="14sp"
+                style="@style/Widget.MaterialComponents.Button.TextButton" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.example.finaldesafio.ui.components.Progress
+        android:id="@+id/progressLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

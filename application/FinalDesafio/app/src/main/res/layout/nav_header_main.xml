@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimens_20"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimens_10"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <ImageView
+        android:id="@+id/imageNavView"
+        android:layout_width="@dimen/dimens_90"
+        android:layout_height="@dimen/dimens_90"
+        android:layout_marginTop="@dimen/dimens_5"
+        android:scaleType="centerCrop"
+        android:fitsSystemWindows="true"
+        tools:ignore="ContentDescription"
+        app:srcCompat="@drawable/ic_user_account"
+        app:tint="@color/white" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/nav_header_vertical_spacing"
+        android:paddingEnd="0dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textNavName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            style="@style/viewText" />
+        <TextView
+            android:id="@+id/textNavEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_10"
+            android:text=""
+            style="@style/viewText" />
+    </LinearLayout>
+</LinearLayout>

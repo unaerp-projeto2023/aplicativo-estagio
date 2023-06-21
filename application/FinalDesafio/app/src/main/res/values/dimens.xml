@@ -1,0 +1,30 @@
+<resources>
+    <dimen name="bar_app_bar_layout">220dp</dimen>
+    <dimen name="nav_header_vertical_spacing">10dp</dimen>
+    <dimen name="fab_margin">10dp</dimen>
+
+    <dimen name="dimens_0">0dp</dimen>
+    <dimen name="dimens_1">1dp</dimen>
+    <dimen name="dimens_5">5dp</dimen>
+    <dimen name="dimens_6">6dp</dimen>
+    <dimen name="dimens_8">8dp</dimen>
+    <dimen name="dimens_10">10dp</dimen>
+    <dimen name="dimens_16">16dp</dimen>
+    <dimen name="dimens_20">20dp</dimen>
+    <dimen name="dimens_24">24dp</dimen>
+    <dimen name="dimens_30">30dp</dimen>
+    <dimen name="dimens_50">50dp</dimen>
+    <dimen name="dimens_55">55dp</dimen>
+    <dimen name="dimens_60">60dp</dimen>
+    <dimen name="dimens_80">80dp</dimen>
+    <dimen name="dimens_90">90dp</dimen>
+    <dimen name="dimens_100">100dp</dimen>
+    <dimen name="dimens_150">150dp</dimen>
+    <dimen name="dimens_200">200dp</dimen>
+
+    <!-- font size -->
+    <dimen name="nav_header_title">16sp</dimen>
+    <dimen name="list_title">18sp</dimen>
+    <dimen name="account_label">25sp</dimen>
+    <dimen name="progress">20sp</dimen>
+</resources>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">FinalDesafio</string>
+    <string name="progress_wait">Aguarde&#8230;</string>
+    <string name="content_description">NADA</string>
+    <string name="login_title">Bem-vindo a tela de login</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_new">Cadastre-se</string>
+    <string name="btn_save">Gravar</string>
+    <string name="app_version">Versão 1.00</string>
+    <string name="btn_cancel">CANCELAR</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_yes">Sim</string>
+    <string name="btn_no">Não</string>
+
+    <!-- menu -->
+    <string name="option1">Perfil</string>
+    <string name="option2">Vagas</string>
+    <string name="option3">Minhas Vagas</string>
+    <string name="option4">Anunciar</string>
+    <string name="option5">Login</string>
+    <string name="option6">Meus Anúncios</string>
+    <string name="content_description_media">NADA</string>
+    <string name="content_description_search">search</string>
+    <string name="content_description_save">save</string>
+
+    <!-- titles -->
+    <string name="title01">Meu Perfil</string>
+    <string name="title02">Lista de Vagas</string>
+    <string name="title03">Minhas Vagas</string>
+    <string name="title04">Anunciar Vaga</string>
+    <string name="title05">Cadastro Perfil de Estagiário</string>
+    <string name="title05a">Cadastro Perfil de Estagiário realizado com sucesso!</string>
+    <string name="title06">Cadastro Perfil de Empresa</string>
+    <string name="title06a">Cadastro Perfil de Empresa realizado com sucesso!</string>
+    <string name="title07">Editar Estagiário</string>
+    <string name="title08">Editar Empresa</string>
+    <string name="title09">Login de Acesso</string>
+    <string name="title10">Meus Anúncios</string>
+    <string name="title11">Pesquisar Vaga</string>
+
+    <string name="account_label1">Guilherme Galvão</string>
+    <string name="account_label2">guilherme@outlook.com</string>
+
+    <string name="account_hint1">Nome</string>
+    <string name="account_hint2">E-mail</string>
+    <string name="account_hint3">Senha</string>
+    <string name="account_hint4">Repetir senha</string>
+    <string name="account_error1">Repetir senha não confere com a Senha digitada!</string>
+    <string name="account_error2">Informe o Nome e E-mail para Editar Perfil!</string>
+    <string name="bt_enter">Entrar</string>
+    <string name="bt_account_user">Cadastrar Estagiário</string>
+    <string name="bt_account_comp">Cadastrar Empresa</string>
+    <string name="bt_account_edit">Editar Perfil</string>
+    <string name="bt_account_delete">Excluir Perfil</string>
+    <string name="bt_account_delete_conf">Confirma Excluir Perfil?</string>
+    <string name="login_field1_error">Informe o e-mail de acesso</string>
+    <string name="login_field2_error">Informe a senha</string>
+
+    <string name="announcement_hint01">Descrição do Anúncio</string>
+    <string name="announcement_hint02">Nome do Contato</string>
+    <string name="announcement_hint03">E-mail do Contato</string>
+    <string name="announcement_hint04">Telefone do Contato</string>
+    <string name="announcement_hint05">Área de Conhecimento</string>
+    <string name="announcement_hint06">Localidade</string>
+    <string name="announcement_hint07">Data Inicial</string>
+    <string name="announcement_hint08">Data Final</string>
+    <string name="announcement_hint09">Remuneração</string>
+    <string name="announcement_hint10">Empresa Anunciante</string>
+    <string name="announcement_hint11">Exibir Empresa Anunciante na llista?</string>
+    <string name="txt_value_default">0.00</string>
+
+    <!-- titles for list -->
+    <string name="list_label1"><b>Localização:</b></string>
+    <string name="list_label2"><b>Salário:</b></string>
+    <string name="list_label3"><b>Anunciante:</b></string>
+    <string name="list_label4"><b>E-mail de Contato:</b></string>
+    <string name="list_label5"><b>Telefone de Contato:</b></string>
+    <string name="list_label6"><b>Data do Anúncio:</b></string>
+    <string name="list_label7"><b>Total de candidatos:</b></string>
+    <string name="bt_confirmation">Se candidatar</string>
+    <string name="text_confirm">Deseja se candidatar a essa vaga?</string>
+
+</resources>

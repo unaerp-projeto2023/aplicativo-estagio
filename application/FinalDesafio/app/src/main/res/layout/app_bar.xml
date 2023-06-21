@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bar_app_bar_layout"
+    android:fitsSystemWindows="true"
+    android:theme="@style/Theme.FinalDesafio.AppBarOverlay">
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:id="@+id/collapsing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+        app:contentScrim="?attr/colorPrimary"
+        app:statusBarScrim="?attr/colorPrimaryVariant">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_app_bar_background"
+            android:scaleType="centerCrop"
+            android:fitsSystemWindows="true"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.7"
+            android:contentDescription="@string/content_description_media" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarApp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="0dp"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/Theme.FinalDesafio.PopupOverlay" />
+        <include layout="@layout/nav_header_main" />
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+</com.google.android.material.appbar.AppBarLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimens_5"
+    android:layout_marginStart="@dimen/dimens_10"
+    android:layout_marginEnd="@dimen/dimens_10"
+    android:layout_marginBottom="@dimen/dimens_5"
+    android:elevation="@dimen/dimens_8">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimens_10"
+        android:orientation="vertical"
+        android:background="@color/cardview_light_background">
+        <TextView
+            android:id="@+id/titleJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Recepcionista"
+            style="@style/titleList" />
+        <TextView
+            android:id="@+id/labelLocality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label1"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelRemuneration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label2"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label3"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelContactEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label4"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelContactPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label5"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label7"
+            style="@style/labelList" />
+        <TextView
+            android:id="@+id/labelDataIni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            tools:text="@string/list_label6"
+            style="@style/labelList" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmation"
+            android:layout_width="@dimen/dimens_150"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_5"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/bt_confirmation"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
